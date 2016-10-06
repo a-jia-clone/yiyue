@@ -1,0 +1,5 @@
+D:\MJia\SideProjects\YiYue\YiYue\bin\YiYue.dll
+D:\MJia\SideProjects\YiYue\YiYue\bin\YiYue.pdb
+D:\MJia\SideProjects\YiYue\YiYue\obj\Release\YiYue.csprojResolveAssemblyReference.cache
+D:\MJia\SideProjects\YiYue\YiYue\obj\Release\YiYue.dll
+D:\MJia\SideProjects\YiYue\YiYue\obj\Release\YiYue.pdb
