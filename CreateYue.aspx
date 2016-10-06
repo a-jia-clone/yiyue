@@ -36,8 +36,14 @@
                 <asp:TextBox ID="txtName" CssClass="form-control" runat="server" placeholder="标题（必填）"></asp:TextBox>
             </div>
             <div class="row">
-                <label class="sr-only">时间:</label>
-                <asp:TextBox ID="txtStartFrom" CssClass="form-control" runat="server" placeholder="活动开始时间（必填）"></asp:TextBox>
+                <div class="col-xs-5">
+                    <label>活动日期（必填）:</label><br />
+                    <asp:TextBox ID="txtStartDate" type="date" CssClass="form-control" runat="server"></asp:TextBox>
+                </div>
+                <div class="col-xs-5">
+                    <label>开始时间（必填）:</label><br />
+                    <asp:TextBox ID="txtStartTime" type="time" CssClass="form-control" runat="server"></asp:TextBox>
+                </div>
             </div>
             <div class="row">
                 <label class="sr-only">地点:</label>
@@ -74,13 +80,9 @@
         </div>
         <asp:Label ID="lblMessage" CssClass="label label-default" runat="server"></asp:Label>
         <asp:SqlDataSource ID="dsYue" runat="server" ConnectionString="<%$ ConnectionStrings:YueAzureConnectionString %>" 
-            SelectCommand="SELECT * FROM [Yues]" 
-            DeleteCommand="DELETE FROM [Yues] WHERE [YueID] = @YueID" 
-            InsertCommand="INSERT INTO [Yues] ([CreatedBy], [CreatedAt], [ModifiedAt], [Status], [YueName], [YueDateTime], [Duration], [Minimum], [Maximum], [Tags], [Description], [Location], [MapUrl], [RegiterDue], [Notes]) VALUES (@CreatedBy, @CreatedAt, @ModifiedAt, @Status, @YueName, @YueDateTime, @Duration, @Minimum, @Maximum, @Tags, @Description, @Location, @MapUrl, @RegiterDue, @Notes)" >
-            <DeleteParameters>
-                <asp:Parameter Name="YueID" Type="Int64" />
-            </DeleteParameters>
-            <InsertParameters>
+            SelectCommand="INSERT INTO [Yues] ([CreatedBy], [CreatedAt], [ModifiedAt], [Status], [YueName], [YueDateTime], [Duration], [Minimum], [Maximum], [Tags], [Description], [Location], [MapUrl], [RegiterDue], [Notes]) VALUES (@CreatedBy, @CreatedAt, @ModifiedAt, @Status, @YueName, @YueDateTime, @Duration, @Minimum, @Maximum, @Tags, @Description, @Location, @MapUrl, @RegiterDue, @Notes); SELECT SCOPE_IDENTITY() as NewID" 
+            OnInserted="dsYue_Inserted" >
+            <SelectParameters>
                 <asp:Parameter Name="CreatedBy" Type="String" />
                 <asp:Parameter Name="CreatedAt" Type="DateTime" />
                 <asp:Parameter Name="ModifiedAt" Type="DateTime" />
@@ -96,7 +98,7 @@
                 <asp:Parameter Name="MapUrl" Type="String" />
                 <asp:Parameter Name="RegiterDue" Type="DateTime" />
                 <asp:Parameter Name="Notes" Type="String" />
-            </InsertParameters>
+            </SelectParameters>
         </asp:SqlDataSource>
         </div>
     </form>

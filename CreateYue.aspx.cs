@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -16,26 +17,39 @@ namespace YiYue
 
         protected void btnCreate_Click(object sender, EventArgs e)
         {
-            DateTime now = DateTime.Now;
-            dsYue.InsertParameters.Clear();
-            dsYue.InsertParameters.Add(new Parameter("CreatedBy", System.Data.DbType.String, txtCreatedBy.Text));
-            dsYue.InsertParameters.Add(new Parameter("CreatedAt", System.Data.DbType.DateTime, now.ToString()));
-            dsYue.InsertParameters.Add(new Parameter("ModifiedAt", System.Data.DbType.DateTime, now.ToString()));
-            dsYue.InsertParameters.Add(new Parameter("Status", System.Data.DbType.Int16, "1"));
-            dsYue.InsertParameters.Add(new Parameter("YueName", System.Data.DbType.String, txtName.Text));
-            dsYue.InsertParameters.Add(new Parameter("YueDateTime", System.Data.DbType.DateTime, now.AddDays(1).ToString()));
-            dsYue.InsertParameters.Add(new Parameter("Duration", System.Data.DbType.String, txtDuration.Text));
-            dsYue.InsertParameters.Add(new Parameter("Minimum", System.Data.DbType.Int32, txtMinimum.Text));
-            dsYue.InsertParameters.Add(new Parameter("Maximum", System.Data.DbType.Int32, txtMaximum.Text));
-            dsYue.InsertParameters.Add(new Parameter("Tags", System.Data.DbType.String, ""));
-            dsYue.InsertParameters.Add(new Parameter("Description", System.Data.DbType.String, txtDescription.Text));
-            dsYue.InsertParameters.Add(new Parameter("Location", System.Data.DbType.String, txtLocation.Text));
-            dsYue.InsertParameters.Add(new Parameter("MapUrl", System.Data.DbType.String, ""));
-            dsYue.InsertParameters.Add(new Parameter("RegiterDue", System.Data.DbType.DateTime, now.AddDays(1).ToString()));
-            dsYue.InsertParameters.Add(new Parameter("Notes", System.Data.DbType.String, ""));
-            dsYue.Insert();
+            DateTime startDateTime = DateTime.Parse(txtStartDate.Text + " " + txtStartTime.Text).ToUniversalTime();
+            DateTime now = DateTime.Now.ToUniversalTime();
+            dsYue.SelectParameters["CreatedBy"].DefaultValue = txtCreatedBy.Text;
+            dsYue.SelectParameters["CreatedAt"].DefaultValue = now.ToString();
+            dsYue.SelectParameters["ModifiedAt"].DefaultValue = now.ToString();
+            dsYue.SelectParameters["Status"].DefaultValue = "1";
+            dsYue.SelectParameters["YueName"].DefaultValue = txtName.Text;
+            dsYue.SelectParameters["YueDateTime"].DefaultValue = startDateTime.ToString();
+            dsYue.SelectParameters["Duration"].DefaultValue = txtDuration.Text;
+            int min = 2;
+            int.TryParse(txtMinimum.Text, out min);
+            dsYue.SelectParameters["Minimum"].DefaultValue = min.ToString();
+            int max = -1;
+            int.TryParse(txtMaximum.Text, out max);
+            dsYue.SelectParameters["Maximum"].DefaultValue = max.ToString();
+            dsYue.SelectParameters["Tags"].DefaultValue = "";
+            dsYue.SelectParameters["Description"].DefaultValue = txtDescription.Text;
+            dsYue.SelectParameters["Location"].DefaultValue = txtLocation.Text;
+            dsYue.SelectParameters["MapUrl"].DefaultValue = "";
+            dsYue.SelectParameters["RegiterDue"].DefaultValue = now.AddDays(1).ToString();
+            dsYue.SelectParameters["Notes"].DefaultValue = "";
+            //Parameter returnValue = new Parameter("RETURN_VALUE");
+            //returnValue.Direction = System.Data.ParameterDirection.ReturnValue;
+            //dsYue.InsertParameters.Add(returnValue);
+            DataView result = (DataView)dsYue.Select(DataSourceSelectArguments.Empty);
+            //lblMessage.Text = e.Command.Parameters["@RETURN_VALUE"].Value.ToString();
+        }
 
-            lblMessage.Text = "Inserted";
+        protected void dsYue_Inserted(object sender, SqlDataSourceStatusEventArgs e)
+        {
+
+            lblMessage.Text = e.Command.Parameters["@RETURN_VALUE"].Value.ToString();
+
         }
     }
 }
