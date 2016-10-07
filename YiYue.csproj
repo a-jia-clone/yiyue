@@ -39,6 +39,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Includes\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>Includes\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design">
+      <HintPath>Includes\Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder">
+      <HintPath>Includes\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -57,6 +70,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ViewYue.aspx" />
     <Content Include="CreateYue.aspx" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
@@ -64,6 +78,7 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\default.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Deployment\StoredProcedures.sql" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
@@ -72,6 +87,17 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\Interacts.cs" />
+    <Compile Include="App_Code\Interacts_GENERATED.cs" />
+    <Compile Include="App_Code\Yues.cs" />
+    <Compile Include="App_Code\Yues_GENERATED.cs" />
+    <Compile Include="ViewYue.aspx.cs">
+      <DependentUpon>ViewYue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewYue.aspx.designer.cs">
+      <DependentUpon>ViewYue.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CreateYue.aspx.cs">
       <DependentUpon>CreateYue.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -105,6 +131,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BO\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

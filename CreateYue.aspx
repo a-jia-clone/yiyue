@@ -14,13 +14,6 @@
     <!-- Custom styles for this template -->
     <link href="css/default.css" rel="stylesheet">
     <script src="js/jquery-3.1.1.min.js"></script>
-    <script>
-        function showhide(divId)
-        {
-            if ($(divId).css('display') == 'none')
-                $(divId).css('display')
-        }
-    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -79,27 +72,6 @@
         <asp:Button ID="btnCreate" CssClass="btn btn-primary btn-lg btn-wide" runat="server" Text="约起来" OnClick="btnCreate_Click" />
         </div>
         <asp:Label ID="lblMessage" CssClass="label label-default" runat="server"></asp:Label>
-        <asp:SqlDataSource ID="dsYue" runat="server" ConnectionString="<%$ ConnectionStrings:YueAzureConnectionString %>" 
-            SelectCommand="INSERT INTO [Yues] ([CreatedBy], [CreatedAt], [ModifiedAt], [Status], [YueName], [YueDateTime], [Duration], [Minimum], [Maximum], [Tags], [Description], [Location], [MapUrl], [RegiterDue], [Notes]) VALUES (@CreatedBy, @CreatedAt, @ModifiedAt, @Status, @YueName, @YueDateTime, @Duration, @Minimum, @Maximum, @Tags, @Description, @Location, @MapUrl, @RegiterDue, @Notes); SELECT SCOPE_IDENTITY() as NewID" 
-            OnInserted="dsYue_Inserted" >
-            <SelectParameters>
-                <asp:Parameter Name="CreatedBy" Type="String" />
-                <asp:Parameter Name="CreatedAt" Type="DateTime" />
-                <asp:Parameter Name="ModifiedAt" Type="DateTime" />
-                <asp:Parameter Name="Status" Type="Byte" />
-                <asp:Parameter Name="YueName" Type="String" />
-                <asp:Parameter Name="YueDateTime" Type="DateTime" />
-                <asp:Parameter Name="Duration" Type="String" />
-                <asp:Parameter Name="Minimum" Type="Int32" />
-                <asp:Parameter Name="Maximum" Type="Int32" />
-                <asp:Parameter Name="Tags" Type="String" />
-                <asp:Parameter Name="Description" Type="String" />
-                <asp:Parameter Name="Location" Type="String" />
-                <asp:Parameter Name="MapUrl" Type="String" />
-                <asp:Parameter Name="RegiterDue" Type="DateTime" />
-                <asp:Parameter Name="Notes" Type="String" />
-            </SelectParameters>
-        </asp:SqlDataSource>
         </div>
     </form>
 </body>

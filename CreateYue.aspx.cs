@@ -17,39 +17,25 @@ namespace YiYue
 
         protected void btnCreate_Click(object sender, EventArgs e)
         {
+            Yues newYue = new Yues();
             DateTime startDateTime = DateTime.Parse(txtStartDate.Text + " " + txtStartTime.Text).ToUniversalTime();
             DateTime now = DateTime.Now.ToUniversalTime();
-            dsYue.SelectParameters["CreatedBy"].DefaultValue = txtCreatedBy.Text;
-            dsYue.SelectParameters["CreatedAt"].DefaultValue = now.ToString();
-            dsYue.SelectParameters["ModifiedAt"].DefaultValue = now.ToString();
-            dsYue.SelectParameters["Status"].DefaultValue = "1";
-            dsYue.SelectParameters["YueName"].DefaultValue = txtName.Text;
-            dsYue.SelectParameters["YueDateTime"].DefaultValue = startDateTime.ToString();
-            dsYue.SelectParameters["Duration"].DefaultValue = txtDuration.Text;
             int min = 2;
-            int.TryParse(txtMinimum.Text, out min);
-            dsYue.SelectParameters["Minimum"].DefaultValue = min.ToString();
             int max = -1;
+            int.TryParse(txtMinimum.Text, out min);
             int.TryParse(txtMaximum.Text, out max);
-            dsYue.SelectParameters["Maximum"].DefaultValue = max.ToString();
-            dsYue.SelectParameters["Tags"].DefaultValue = "";
-            dsYue.SelectParameters["Description"].DefaultValue = txtDescription.Text;
-            dsYue.SelectParameters["Location"].DefaultValue = txtLocation.Text;
-            dsYue.SelectParameters["MapUrl"].DefaultValue = "";
-            dsYue.SelectParameters["RegiterDue"].DefaultValue = now.AddDays(1).ToString();
-            dsYue.SelectParameters["Notes"].DefaultValue = "";
-            //Parameter returnValue = new Parameter("RETURN_VALUE");
-            //returnValue.Direction = System.Data.ParameterDirection.ReturnValue;
-            //dsYue.InsertParameters.Add(returnValue);
-            DataView result = (DataView)dsYue.Select(DataSourceSelectArguments.Empty);
-            //lblMessage.Text = e.Command.Parameters["@RETURN_VALUE"].Value.ToString();
-        }
 
-        protected void dsYue_Inserted(object sender, SqlDataSourceStatusEventArgs e)
-        {
+            newYue.CreatedBy = txtCreatedBy.Text;
+            newYue.CreatedAt = now;
+            newYue.ModifiedAt = now;
+            newYue.Status = 1;
+            newYue.YueName = txtName.Text;
+            newYue.YueDateTime = startDateTime;
+            newYue.Minimum = min;
+            newYue.Maximum = max;
 
-            lblMessage.Text = e.Command.Parameters["@RETURN_VALUE"].Value.ToString();
-
+            newYue.Insert();
+            lblMessage.Text = newYue.YueID.ToString();
         }
     }
 }
