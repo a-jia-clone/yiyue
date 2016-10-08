@@ -70,6 +70,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="js\yiyue.js" />
     <Content Include="ViewYue.aspx" />
     <Content Include="CreateYue.aspx" />
     <Content Include="css\bootstrap-theme.css" />

@@ -15,9 +15,8 @@
     <link href="css/default.css" rel="stylesheet">
     <script src="js/jquery-3.1.1.min.js"></script>
 </head>
-<body>
+<body onload="loadData">
     <form id="form1" runat="server">
-
         <div class="container">
         <asp:PlaceHolder ID="phMain" runat="server">
             <div class="row">
@@ -27,6 +26,7 @@
             <div class="row">
                 <label class="sr-only">标题:</label>
                 <asp:TextBox ID="txtName" CssClass="form-control" runat="server" placeholder="标题（必填）"></asp:TextBox>
+                <asp:HiddenField ID="hidOffset" runat="server" />
             </div>
             <div class="row">
                 <div class="col-xs-5">

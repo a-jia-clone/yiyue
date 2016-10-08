@@ -1,3 +1,13 @@
+/****************************************************************************/
+/* Code Author (written by Xin Zhao)                                        */
+/*                                                                          */
+/* This file was automatically generated using Code Author.                 */
+/* Any manual changes to this file will be overwritten by a automated tool. */
+/*                                                                          */
+/* Date Generated: 2016/10/7 23:37:20                                    */
+/*                                                                          */
+/* www.CodeAuthor.org                                                       */
+/****************************************************************************/
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -642,7 +652,7 @@ public partial class Yues
 	public static void Delete(System.Int64? yueID)
 	{
 		Delete(
-        yueID, (DbTransaction)null);
+		yueID);
 	}
 	
 	/// <summary>

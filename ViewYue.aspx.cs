@@ -22,7 +22,7 @@ namespace YiYue
                     Yues yue = Yues.Get(yueId);
                     litName.Text = yue.YueName;
                     litCreatedBy.Text = yue.CreatedBy;
-                    litStartDateTime.Text = yue.YueDateTime.ToString();
+                    litStartDateTime.Text = yue.YueDateTime.Value.AddMinutes(0 - yue.Offset.Value).ToString();
                     litLocation.Text = yue.Location;
                     litMinimum.Text = yue.Minimum > 0 ? yue.Minimum.ToString() : "2";
                     litMaximum.Text = yue.Maximum > 0 ? yue.Maximum.ToString() : "不限";

@@ -4,7 +4,7 @@
 /* This file was automatically generated using Code Author.                 */
 /* Any manual changes to this file will be overwritten by a automated tool. */
 /*                                                                          */
-/* Date Generated: 2016/10/6 20:42:46                                    */
+/* Date Generated: 2016/10/7 23:37:20                                    */
 /*                                                                          */
 /* www.CodeAuthor.org                                                       */
 /****************************************************************************/
@@ -23,7 +23,8 @@ CREATE PROCEDURE [dbo].gspInteracts_INSERT
 @viewedAt AS datetime = null,
 @updatedAt AS datetime = null,
 @status AS tinyint = null,
-@notes AS nvarchar(MAX) = null
+@notes AS nvarchar(MAX) = null,
+@offset AS int = null
 )
 AS
 
@@ -35,7 +36,8 @@ INSERT INTO
   [ViewedAt],
   [UpdatedAt],
   [Status],
-  [Notes]
+  [Notes],
+  [Offset]
 )
 VALUES
 (
@@ -44,7 +46,8 @@ VALUES
   @viewedAt,
   @updatedAt,
   @status,
-  @notes
+  @notes,
+  @offset
 )
 
 SELECT SCOPE_IDENTITY()
@@ -90,7 +93,8 @@ CREATE PROCEDURE [dbo].gspInteracts_UPDATE
 @viewedAt datetime = null,
 @updatedAt datetime = null,
 @status tinyint = null,
-@notes nvarchar(MAX) = null
+@notes nvarchar(MAX) = null,
+@offset int = null
 )
 AS
 
@@ -102,7 +106,8 @@ SET
   [ViewedAt] = @viewedAt,
   [UpdatedAt] = @updatedAt,
   [Status] = @status,
-  [Notes] = @notes
+  [Notes] = @notes,
+  [Offset] = @offset
 WHERE
   [InteractId] = @interactId
 
@@ -145,7 +150,8 @@ CREATE PROCEDURE [dbo].gspInteracts_SEARCH
 @viewedAt datetime = null,
 @updatedAt datetime = null,
 @status tinyint = null,
-@notes nvarchar(MAX) = null
+@notes nvarchar(MAX) = null,
+@offset int = null
 )
 AS
 
@@ -165,6 +171,8 @@ AND
   (@updatedAt IS NULL OR [UpdatedAt] = @updatedAt)
 AND
   (@status IS NULL OR [Status] = @status)
+AND
+  (@offset IS NULL OR [Offset] = @offset)
 
 GO
 
@@ -192,7 +200,8 @@ CREATE PROCEDURE [dbo].gspYues_INSERT
 @location AS nvarchar(255) = null,
 @mapUrl AS nvarchar(MAX) = null,
 @regiterDue AS datetime = null,
-@notes AS nvarchar(MAX) = null
+@notes AS nvarchar(MAX) = null,
+@offset AS int = null
 )
 AS
 
@@ -213,7 +222,8 @@ INSERT INTO
   [Location],
   [MapUrl],
   [RegiterDue],
-  [Notes]
+  [Notes],
+  [Offset]
 )
 VALUES
 (
@@ -231,7 +241,8 @@ VALUES
   @location,
   @mapUrl,
   @regiterDue,
-  @notes
+  @notes,
+  @offset
 )
 
 SELECT SCOPE_IDENTITY()
@@ -286,7 +297,8 @@ CREATE PROCEDURE [dbo].gspYues_UPDATE
 @location nvarchar(255) = null,
 @mapUrl nvarchar(MAX) = null,
 @regiterDue datetime = null,
-@notes nvarchar(MAX) = null
+@notes nvarchar(MAX) = null,
+@offset int = null
 )
 AS
 
@@ -307,7 +319,8 @@ SET
   [Location] = @location,
   [MapUrl] = @mapUrl,
   [RegiterDue] = @regiterDue,
-  [Notes] = @notes
+  [Notes] = @notes,
+  [Offset] = @offset
 WHERE
   [YueID] = @yueID
 
@@ -359,7 +372,8 @@ CREATE PROCEDURE [dbo].gspYues_SEARCH
 @location nvarchar(255) = null,
 @mapUrl nvarchar(MAX) = null,
 @regiterDue datetime = null,
-@notes nvarchar(MAX) = null
+@notes nvarchar(MAX) = null,
+@offset int = null
 )
 AS
 
@@ -391,6 +405,8 @@ AND
   (@location IS NULL OR @location = '' OR [Location] LIKE @location + '%')
 AND
   (@regiterDue IS NULL OR [RegiterDue] = @regiterDue)
+AND
+  (@offset IS NULL OR [Offset] = @offset)
 
 GO
 

@@ -12,7 +12,16 @@ namespace YiYue
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack)
+            {
+                string strJS = String.Format(
+                    @"$(document).ready(function(){{document.getElementById('{0}').value = new Date().getTimezoneOffset();}});",
+                    hidOffset.ClientID);
+                ScriptManager.RegisterStartupScript(this, typeof(Page), 
+                    "loadData", 
+                    strJS,
+                    true);
+            }
         }
 
         protected void btnCreate_Click(object sender, EventArgs e)
@@ -33,9 +42,12 @@ namespace YiYue
             newYue.YueDateTime = startDateTime;
             newYue.Minimum = min;
             newYue.Maximum = max;
+            newYue.Offset = int.Parse(hidOffset.Value);
 
             newYue.Insert();
             lblMessage.Text = newYue.YueID.ToString();
+
+            Response.Redirect(String.Format("ViewYue.aspx?yueid={0}&isowner=yes", newYue.YueID.ToString()));
         }
     }
 }
