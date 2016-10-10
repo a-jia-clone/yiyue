@@ -85,6 +85,7 @@
                 <label class="sr-only">报名者微信号:</label>
                 <asp:TextBox ID="txtPlayer" CssClass="form-control" runat="server" placeholder="报名者微信号（必填）"></asp:TextBox>
                 <asp:HiddenField ID="hidYueId" runat="server" />
+                <asp:HiddenField ID="hidOffset" Value="0" runat="server" />
             </div>
             <div class="row">
                 <label class="sr-only">留言:</label>

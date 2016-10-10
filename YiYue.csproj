@@ -70,7 +70,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="YuesMe.aspx" />
     <Content Include="js\yiyue.js" />
+    <Content Include="MyYues.aspx" />
     <Content Include="ViewYue.aspx" />
     <Content Include="CreateYue.aspx" />
     <Content Include="css\bootstrap-theme.css" />
@@ -92,6 +94,20 @@
     <Compile Include="App_Code\Interacts_GENERATED.cs" />
     <Compile Include="App_Code\Yues.cs" />
     <Compile Include="App_Code\Yues_GENERATED.cs" />
+    <Compile Include="YuesMe.aspx.cs">
+      <DependentUpon>YuesMe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YuesMe.aspx.designer.cs">
+      <DependentUpon>YuesMe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyYues.aspx.cs">
+      <DependentUpon>MyYues.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyYues.aspx.designer.cs">
+      <DependentUpon>MyYues.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewYue.aspx.cs">
       <DependentUpon>ViewYue.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
