@@ -18,7 +18,7 @@ namespace YiYue
                     @"$(document).ready(function(){{document.getElementById('{0}').value = new Date().getTimezoneOffset();}});",
                     hidOffset.ClientID);
                 ScriptManager.RegisterStartupScript(this, typeof(Page), 
-                    "loadData", 
+                    "", 
                     strJS,
                     true);
             }
@@ -40,14 +40,17 @@ namespace YiYue
             newYue.Status = 1;
             newYue.YueName = txtName.Text;
             newYue.YueDateTime = startDateTime;
+            newYue.Location = txtLocation.Text;
+            newYue.Description = txtDescription.Text;
             newYue.Minimum = min;
             newYue.Maximum = max;
+            newYue.Duration = txtDuration.Text;
             newYue.Offset = int.Parse(hidOffset.Value);
 
             newYue.Insert();
             lblMessage.Text = newYue.YueID.ToString();
 
-            Response.Redirect(String.Format("ViewYue.aspx?yueid={0}&isowner=yes", newYue.YueID.ToString()));
+            Response.Redirect(String.Format("ViewYue.aspx?yueid={0}&viewer={1}", newYue.YueID.ToString()));
         }
     }
 }

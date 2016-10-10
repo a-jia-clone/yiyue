@@ -21,8 +21,8 @@
         <div class="container">
         <asp:PlaceHolder ID="phMain" runat="server">
             <div class="row">
-                <label>标题:</label>
-                <h1><asp:Literal ID="litName" runat="server"></asp:Literal></h1>
+                <label class="col-xs-3">标题:</label>
+                <h1 class="col-xs-9"><asp:Literal ID="litName" runat="server"></asp:Literal></h1>
             </div>
             <div class="row">
                 <div class="col-xs-3">
@@ -44,25 +44,39 @@
                 <div class="col-xs-3">
                     <label>地点:</label>
                 </div>
-                <div class="col-xs-5">
+                <div class="col-xs-9">
                     <asp:Literal ID="litLocation" runat="server"></asp:Literal>
                 </div>
             </div>
             <div class="row">
-                <label>详情:</label>
-                <asp:Literal ID="litDescription" runat="server"></asp:Literal>
+                <div class="col-xs-12">
+                    <label>详情:</label>
+                    <asp:Literal ID="litDescription" runat="server"></asp:Literal>
+                </div>
             </div>
             <div class="row">
-                <label>时长:</label>
-                <asp:Literal ID="litDuration" runat="server"></asp:Literal>
+                <div class="col-xs-3">
+                    <label>时长:</label>
+                </div>
+                <div class="col-xs-9">
+                    <asp:Literal ID="litDuration" runat="server"></asp:Literal>
+                </div>
+            </div>
+            <div class="row" style="display: none;">
+                <div class="col-xs-3">
+                    <label>截止报名:</label>
+                </div>
+                <div class="col-xs-9">
+                    <asp:Literal ID="litRegisterDue" runat="server"></asp:Literal>
+                </div>
             </div>
             <div class="row">
-                <label>截止报名:</label>
-                <asp:Literal ID="litRegisterDue" runat="server"></asp:Literal>
-            </div>
-            <div class="row">
-                <label>人数:</label>
-                <asp:Literal ID="litMinimum" runat="server"></asp:Literal> -- <asp:Literal ID="litMaximum" runat="server"></asp:Literal>
+                <div class="col-xs-3">
+                    <label>人数:</label>
+                </div>
+                <div class="col-xs-9">
+                    <asp:Literal ID="litMinimum" runat="server"></asp:Literal> 至 <asp:Literal ID="litMaximum" runat="server"></asp:Literal>
+                </div>
             </div>
             <div class="row">
                 <div class="col-xs-3"><asp:Literal ID="litViewed" runat="server"></asp:Literal><label>人气</label></div>

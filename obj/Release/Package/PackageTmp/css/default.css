@@ -4,6 +4,10 @@
   background-color: #eee;
 }
 
+.row {
+    margin-bottom: 10px;
+}
+
 .btn-wide {
     width: 100%;
     top: 2px;
