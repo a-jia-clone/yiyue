@@ -68,6 +68,9 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="ThoughtWorks.QRCode">
+      <HintPath>..\packages\ThoughtWorks.QRCode.1.1.0\lib\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="YuesMe.aspx" />
@@ -94,6 +97,9 @@
     <Compile Include="App_Code\Interacts_GENERATED.cs" />
     <Compile Include="App_Code\Yues.cs" />
     <Compile Include="App_Code\Yues_GENERATED.cs" />
+    <Compile Include="handlers\qrcode.ashx.cs">
+      <DependentUpon>qrcode.ashx</DependentUpon>
+    </Compile>
     <Compile Include="YuesMe.aspx.cs">
       <DependentUpon>YuesMe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -140,6 +146,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="packages.config" />
+    <Content Include="handlers\qrcode.ashx" />
     <None Include="Properties\PublishProfiles\yiyue - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\yiyue - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">

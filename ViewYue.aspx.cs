@@ -6,6 +6,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Linq;
+using System.Drawing;
+using ThoughtWorks.QRCode.Codec;
+using System.Text;
 
 public enum Yue_Status
 {
@@ -195,6 +198,12 @@ namespace YiYue
             lblMessage.Text = "谢谢";
 
             return theReply;
+        }
+
+        protected void btnCard_Click(object sender, EventArgs e)
+        {
+            lblMessage.Text = Request.Url.ToString();
+            imgQRCode.ImageUrl = String.Format("~/handlers/qrcode.ashx?code={0}", Server.UrlEncode(Request.Url.ToString()));
         }
     }
 }

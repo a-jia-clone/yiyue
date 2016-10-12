@@ -50,7 +50,7 @@ namespace YiYue
             newYue.Insert();
             lblMessage.Text = newYue.YueID.ToString();
 
-            Response.Redirect(String.Format("ViewYue.aspx?yueid={0}&viewer={1}", newYue.YueID.ToString()));
+            Response.Redirect(String.Format("ViewYue.aspx?yueid={0}&viewer={1}", newYue.YueID.ToString(), txtCreatedBy.Text));
         }
     }
 }

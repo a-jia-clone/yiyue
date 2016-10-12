@@ -7,3 +7,4 @@ D:\MJia\SideProjects\YiYue\YiYue\bin\Microsoft.Practices.EnterpriseLibrary.Commo
 D:\MJia\SideProjects\YiYue\YiYue\bin\Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design.dll
 D:\MJia\SideProjects\YiYue\YiYue\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
 D:\MJia\SideProjects\YiYue\YiYue\bin\Microsoft.Practices.ObjectBuilder.dll
+D:\MJia\SideProjects\YiYue\YiYue\bin\ThoughtWorks.QRCode.dll
