@@ -14,6 +14,7 @@
     <!-- Custom styles for this template -->
     <link href="css/default.css" rel="stylesheet">
     <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/yiyue.js"></script>
 </head>
 <body>
@@ -66,11 +67,6 @@
                     <asp:TextBox ID="txtDuration" CssClass="form-control" runat="server" placeholder="时长"></asp:TextBox>
                 </div>
             </div>
-            <div class="row" style="display: none;">
-                <div class="col-xs-2"><label class="sr-only">截止报名:</label>
-                    <asp:TextBox ID="txtRegisterDue" CssClass="form-control" runat="server" placeholder="截止报名"></asp:TextBox>
-                </div>
-            </div>
             <div class="row">
                 <div class="col-xs-2"><label>人数:</label></div>
                 <div class="col-xs-4">
@@ -80,6 +76,31 @@
                 <div class="col-xs-4">
                     <asp:TextBox ID="txtMaximum" type="number" Text="不限" onfocus="this.select();" CssClass="form-control" runat="server" placeholder="最多人数"></asp:TextBox>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">活动项目</button>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">活动项目</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>  
+
+              </div>
             </div>
         </div>
         <div class="btn-group btn-wide">

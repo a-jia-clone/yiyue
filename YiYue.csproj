@@ -73,6 +73,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="test.aspx" />
     <Content Include="YuesMe.aspx" />
     <Content Include="js\yiyue.js" />
     <Content Include="MyYues.aspx" />
@@ -95,10 +96,19 @@
   <ItemGroup>
     <Compile Include="App_Code\Interacts.cs" />
     <Compile Include="App_Code\Interacts_GENERATED.cs" />
+    <Content Include="App_Code\Tags.cs" />
+    <Content Include="App_Code\Tags_GENERATED.cs" />
     <Compile Include="App_Code\Yues.cs" />
     <Compile Include="App_Code\Yues_GENERATED.cs" />
     <Compile Include="handlers\qrcode.ashx.cs">
       <DependentUpon>qrcode.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
     </Compile>
     <Compile Include="YuesMe.aspx.cs">
       <DependentUpon>YuesMe.aspx</DependentUpon>

@@ -58,6 +58,11 @@ public static class Utilities
             default: return "";
         }
     }
+
+    public static string YueTitle(string yueName, string yueStartDateTime, string titleType = "约吗?")
+    {
+        return String.Format("{0} {1} {2}", titleType, yueName, yueStartDateTime);
+    }
 }
 
 namespace YiYue
@@ -93,6 +98,7 @@ namespace YiYue
                     litDescription.Text = yue.Description;
                     litDuration.Text = yue.Duration;
                     litRegisterDue.Text = yue.RegiterDue.ToString();
+                    Page.Title = Utilities.YueTitle(litName.Text, litStartDateTime.Text);
 
                     //calculate attendancy
                     Interacts search = new Interacts();
