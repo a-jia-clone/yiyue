@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using YiYue.App_Code;
 
 namespace YiYue
 {
@@ -34,7 +35,7 @@ namespace YiYue
                 return;
             }
 
-            rptMyYues.DataSource = myYues.OrderBy(y => y.Status).ThenBy(y => y.YueDateTime);
+            rptMyYues.DataSource = myYues.OrderBy(y => y.Status).ThenByDescending(y => y.YueDateTime);
             rptMyYues.DataBind();
         }
 
@@ -51,10 +52,12 @@ namespace YiYue
                 Literal litName = (Literal)e.Item.FindControl("litName");
                 Literal litStartDateTime = (Literal)e.Item.FindControl("litStartDateTime");
                 Literal litLocation = (Literal)e.Item.FindControl("litLocation");
+                Literal litTags = (Literal)e.Item.FindControl("litTags");
 
                 litName.Text = yue.YueName;
                 litStartDateTime.Text = Utilities.FormatDateTime(yue.YueDateTime, yue.Offset.Value, yue.Offset.Value);
                 litLocation.Text = yue.Location;
+                litTags.Text = Utilities.DisplayTags(yue.Tags);
 
                 //attendance
                 Literal litViewed = (Literal)e.Item.FindControl("litViewed");

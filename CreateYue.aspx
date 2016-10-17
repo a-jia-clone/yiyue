@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="icon" href="../../favicon.ico">
     <title>约起来！</title>
     <!-- Bootstrap core CSS -->
@@ -16,6 +16,30 @@
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/yiyue.js"></script>
+    <script>
+        function tagOnClick(btn) {
+            if (btn.className == "btn btn-secondary") {
+                btn.className = "btn btn-info";
+                selectTag(btn.value, btn.innerText);
+            } else {
+                btn.className = "btn btn-secondary";
+                unSelectTag(btn.value, btn.innerText);
+            }
+        }
+
+        function selectTag(id, name) {
+            var divTags = document.getElementById("divTags");
+            hidTags.value += id + ",";
+            divTags.innerHTML += "<span>" + name + "</span>";
+        }
+
+        function unSelectTag(id, name) {
+            var divTags = document.getElementById("divTags");
+            hidTags.value = hidTags.value.replace(id + ",", "");
+            divTags.innerHTML = divTags.innerHTML.replace("<span>" + name + "</span>", "");
+        }
+    </script>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -78,8 +102,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-2">
+                <div class="col-xs-3">
                     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">活动项目</button>
+                    <asp:HiddenField ID="hidTags" runat="server" />
+                </div>
+                <div class="col-xs-7" id="divTags"></div>
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -90,24 +117,24 @@
         <h4 class="modal-title">活动项目</h4>
       </div>
       <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <asp:Repeater ID="rptTags" runat="server" OnItemDataBound="rptTags_ItemDataBound">
+              <ItemTemplate>
+                  <div class="col-xs-3">
+                      <button type="button" id="btnTag" runat="server" onclick="tagOnClick(this);" class="btn btn-secondary"></button>
+                  </div>
+              </ItemTemplate>
+          </asp:Repeater>
       </div>
     </div>
 
   </div>
 </div>  
-
-              </div>
             </div>
         </div>
         <div class="btn-group btn-wide">
         <asp:Button ID="btnCreate" CssClass="btn btn-primary btn-lg btn-wide" runat="server" Text="约起来" OnClick="btnCreate_Click" />
         </div>
         <asp:Label ID="lblMessage" CssClass="label label-default" runat="server"></asp:Label>
-        </div>
     </form>
 </body>
 </html>

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using YiYue.App_Code;
 
 namespace YiYue
 {
@@ -51,10 +52,12 @@ namespace YiYue
                 Literal litName = (Literal)e.Item.FindControl("litName");
                 Literal litStartDateTime = (Literal)e.Item.FindControl("litStartDateTime");
                 Literal litLocation = (Literal)e.Item.FindControl("litLocation");
+                Literal litTags = (Literal)e.Item.FindControl("litTags");
 
                 litName.Text = yue.Yue.YueName;
                 litStartDateTime.Text = Utilities.FormatDateTime(yue.Yue.YueDateTime, yue.Yue.Offset == null ? 0 : yue.Yue.Offset.Value, yue.Offset == null ? 0 : yue.Offset.Value);
                 litLocation.Text = yue.Yue.Location;
+                litTags.Text = Utilities.DisplayTags(yue.Yue.Tags);
 
                 //attendance
                 Literal litViewed = (Literal)e.Item.FindControl("litViewed");

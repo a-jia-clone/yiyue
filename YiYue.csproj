@@ -97,7 +97,8 @@
     <Compile Include="App_Code\Interacts.cs" />
     <Compile Include="App_Code\Interacts_GENERATED.cs" />
     <Content Include="App_Code\Tags.cs" />
-    <Content Include="App_Code\Tags_GENERATED.cs" />
+    <Compile Include="App_Code\Tags_GENERATED.cs" />
+    <Compile Include="App_Code\Utilities.cs" />
     <Compile Include="App_Code\Yues.cs" />
     <Compile Include="App_Code\Yues_GENERATED.cs" />
     <Compile Include="handlers\qrcode.ashx.cs">

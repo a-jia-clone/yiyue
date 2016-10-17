@@ -1,13 +1,3 @@
-/****************************************************************************/
-/* Code Author (written by Xin Zhao)                                        */
-/*                                                                          */
-/* This file was automatically generated using Code Author.                 */
-/* Any manual changes to this file will be overwritten by a automated tool. */
-/*                                                                          */
-/* Date Generated: 2016/10/13 23:20:55                                    */
-/*                                                                          */
-/* www.CodeAuthor.org                                                       */
-/****************************************************************************/
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

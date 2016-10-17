@@ -2,7 +2,7 @@
 var lineLink = 'http://yiyue.azurewebsites.net/viewyue.aspx?id=7';
 var descContent = "活动详情如下！";
 var shareTitle = '易约再约';
-var appid = 'wx7a42b421d92a74e6';
+var appid = 'wxf7231abf08eb3252';
 
 function shareFriend() {
     WeixinJSBridge.invoke('sendAppMessage',{
@@ -58,3 +58,7 @@ document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
         shareWeibo();
     });
 }, false);
+
+$(document).ready(function () {
+    $('[data-toggle="popover"]').popover();
+});

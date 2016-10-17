@@ -85,6 +85,15 @@ namespace YiYue {
         protected global::System.Web.UI.WebControls.Literal litDuration;
         
         /// <summary>
+        /// litTags control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litTags;
+        
+        /// <summary>
         /// litRegisterDue control.
         /// </summary>
         /// <remarks>
@@ -112,40 +121,49 @@ namespace YiYue {
         protected global::System.Web.UI.WebControls.Literal litMaximum;
         
         /// <summary>
-        /// litViewed control.
+        /// litStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litViewed;
+        protected global::System.Web.UI.WebControls.Literal litStatus;
         
         /// <summary>
-        /// litAccept control.
+        /// btnViewedPlayers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litAccept;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnViewedPlayers;
         
         /// <summary>
-        /// litTentative control.
+        /// btnAcceptedPlayers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litTentative;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnAcceptedPlayers;
         
         /// <summary>
-        /// litReject control.
+        /// btnTentativePlayers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litReject;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnTentativePlayers;
+        
+        /// <summary>
+        /// btnRejectedPlayers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnRejectedPlayers;
         
         /// <summary>
         /// pnlOwnerButtons control.
@@ -166,22 +184,40 @@ namespace YiYue {
         protected global::System.Web.UI.WebControls.Button btnCard;
         
         /// <summary>
-        /// btnShare control.
+        /// btnActivate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnShare;
+        protected global::System.Web.UI.WebControls.Button btnActivate;
         
         /// <summary>
-        /// btnPost control.
+        /// btnExpire control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPost;
+        protected global::System.Web.UI.WebControls.Button btnExpire;
+        
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
+        
+        /// <summary>
+        /// btnDelete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDelete;
         
         /// <summary>
         /// imgQRCode control.
@@ -193,6 +229,15 @@ namespace YiYue {
         protected global::System.Web.UI.WebControls.Image imgQRCode;
         
         /// <summary>
+        /// txtPost control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPost;
+        
+        /// <summary>
         /// pnlPlayerButtons control.
         /// </summary>
         /// <remarks>
@@ -200,6 +245,33 @@ namespace YiYue {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlPlayerButtons;
+        
+        /// <summary>
+        /// txtPlayer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPlayer;
+        
+        /// <summary>
+        /// hidYueId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hidYueId;
+        
+        /// <summary>
+        /// txtNotes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNotes;
         
         /// <summary>
         /// btnAccept control.
@@ -238,24 +310,6 @@ namespace YiYue {
         protected global::System.Web.UI.WebControls.Button btnViewed;
         
         /// <summary>
-        /// txtPlayer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPlayer;
-        
-        /// <summary>
-        /// hidYueId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hidYueId;
-        
-        /// <summary>
         /// hidOffset control.
         /// </summary>
         /// <remarks>
@@ -263,15 +317,6 @@ namespace YiYue {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidOffset;
-        
-        /// <summary>
-        /// txtNotes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNotes;
         
         /// <summary>
         /// lblMessage control.

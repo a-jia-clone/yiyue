@@ -1,10 +1,10 @@
 D:\MJia\SideProjects\YiYue\YiYue\bin\YiYue.dll
 D:\MJia\SideProjects\YiYue\YiYue\bin\YiYue.pdb
-D:\MJia\SideProjects\YiYue\YiYue\obj\Debug\YiYue.csprojResolveAssemblyReference.cache
-D:\MJia\SideProjects\YiYue\YiYue\obj\Debug\YiYue.dll
-D:\MJia\SideProjects\YiYue\YiYue\obj\Debug\YiYue.pdb
 D:\MJia\SideProjects\YiYue\YiYue\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
 D:\MJia\SideProjects\YiYue\YiYue\bin\Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design.dll
 D:\MJia\SideProjects\YiYue\YiYue\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
 D:\MJia\SideProjects\YiYue\YiYue\bin\Microsoft.Practices.ObjectBuilder.dll
 D:\MJia\SideProjects\YiYue\YiYue\bin\ThoughtWorks.QRCode.dll
+D:\MJia\SideProjects\YiYue\YiYue\obj\Debug\YiYue.dll
+D:\MJia\SideProjects\YiYue\YiYue\obj\Debug\YiYue.pdb
+D:\MJia\SideProjects\YiYue\YiYue\obj\Debug\YiYue.csprojResolveAssemblyReference.cache

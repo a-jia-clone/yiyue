@@ -30,13 +30,22 @@
             <asp:Repeater ID="rptMyYues" runat="server" OnItemDataBound="rptMyYues_ItemDataBound">
                 <ItemTemplate>
                     <asp:HyperLink ID="hlnkViewYue" runat="server">
-                      <h4 class="list-group-item-heading"><asp:Literal ID="litName" runat="server"></asp:Literal></h4>
-                      <span>人气：<asp:Literal ID="litViewed" runat="server"></asp:Literal></span>
-                      <span>参加：<asp:Literal ID="litAccept" runat="server"></asp:Literal></span>
-                      <p class="list-group-item-text">
-                          <asp:Literal ID="litStartDateTime" runat="server"></asp:Literal>
-                          <asp:Literal ID="litLocation" runat="server"></asp:Literal>
-                      </p>
+                        <div class="col-xs-12">
+                        <h4 class="list-group-item-heading"><asp:Literal ID="litName" runat="server"></asp:Literal></h4>
+                        </div>
+                        <div class="col-xs-4">
+                            <span>人气：<asp:Literal ID="litViewed" runat="server"></asp:Literal></span>
+                            <span>参加：<asp:Literal ID="litAccept" runat="server"></asp:Literal></span>
+                        </div>
+                        <div class="col-xs-8">
+                            <asp:Literal ID="litTags" runat="server"></asp:Literal>
+                        </div>
+                        <div class="col-xs-12">
+                        <p class="list-group-item-text">
+                            <asp:Literal ID="litStartDateTime" runat="server"></asp:Literal>&nbsp;&nbsp;
+                            <asp:Literal ID="litLocation" runat="server"></asp:Literal>
+                        </p>
+                        </div>
                     </asp:HyperLink>
                 </ItemTemplate>
             </asp:Repeater>
